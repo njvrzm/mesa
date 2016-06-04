@@ -318,7 +318,6 @@ class SingleGrid(Grid):
     '''
     Grid where each cell contains exactly at most one object.
     '''
-    empties = []
 
     def __init__(self, height, width, torus):
         '''
@@ -455,8 +454,6 @@ class ContinuousSpace(object):
     their position as an (x, y) tuple. This class uses a MultiGrid internally
     to store agent objects, to speed up neighborhood lookups.
     '''
-
-    _grid = None
 
     def __init__(self, x_max, y_max, torus, x_min=0, y_min=0,
                  grid_width=100, grid_height=100):

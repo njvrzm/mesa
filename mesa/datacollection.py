@@ -45,14 +45,6 @@ class DataCollector(object):
     collect them. When the collect(...) method is called, it executes these
     functions one by one and stores the results.
     '''
-    model_reporters = {}
-    agent_reporters = {}
-
-    model_vars = {}
-    agent_vars = {}
-    tables = {}
-
-    model = None
 
     def __init__(self, model_reporters={}, agent_reporters={}, tables={}):
         '''

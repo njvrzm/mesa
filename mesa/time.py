@@ -40,11 +40,6 @@ class BaseScheduler(object):
     (This is explicitly meant to replicate the scheduler in MASON).
     '''
 
-    model = None
-    steps = 0
-    time = 0
-    agents = []
-
     def __init__(self, model):
         '''
         Create a new, empty BaseScheduler.
@@ -147,11 +142,6 @@ class StagedActivation(BaseScheduler):
     This schedule tracks steps and time separately. Time advances in fractional
     increments of 1 / (# of stages), meaning that 1 step = 1 unit of time.
     '''
-
-    stage_list = []
-    shuffle = False
-    shuffle_between_stages = False
-    stage_time = 1
 
     def __init__(self, model, stage_list=["step"], shuffle=False,
             shuffle_between_stages=False):

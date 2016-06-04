@@ -43,9 +43,6 @@ class TextVisualization(object):
 
     '''
 
-    model = None
-    elements = []
-
     def __init__(self, model):
         '''
         Create a new Text Visualization object.

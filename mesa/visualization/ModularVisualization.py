@@ -80,7 +80,6 @@ import os
 import datetime as dt
 
 import tornado.ioloop
-import tornado.template
 import tornado.web
 import tornado.websocket
 import tornado.escape
@@ -110,10 +109,6 @@ class VisualizationElement(object):
     package_includes = []
     local_includes = []
     js_code = ''
-    render_args = {}
-
-    def __init__(self):
-        pass
 
     def render(self, model):
         '''
@@ -195,21 +190,8 @@ class ModularServer(tornado.web.Application):
     '''
 
     verbose = True
-
-    model_name = "Mesa Model"
-    model_cls = None  # A model class
-    portrayal_method = None
     port = 8888  # Default port to listen on
-    canvas_width = 500
-    canvas_height = 500
-    grid_height = 0
-    grid_width = 0
-
     max_steps = 100000
-    viz_states = []
-
-    model_args = ()
-    model_kwargs = {}
 
     # Handlers and other globals:
     page_handler = (r'/', PageHandler)
@@ -235,10 +217,8 @@ class ModularServer(tornado.web.Application):
         self.local_includes = set()
         self.js_code = []
         for element in self.visualization_elements:
-            for include_file in element.package_includes:
-                self.package_includes.add(include_file)
-            for include_file in element.local_includes:
-                self.local_includes.add(include_file)
+            self.package_includes.update(element.package_includes)
+            self.local_includes.update(element.local_includes)
             self.js_code.append(element.js_code)
 
         # Initializing the model

@@ -44,9 +44,6 @@ class CanvasGrid(VisualizationElement):
     '''
 
     package_includes = ["GridDraw.js", "CanvasModule.js"]
-    portrayal_method = None  # Portrayal function
-    canvas_height = 500
-    canvas_width = 500
 
     def __init__(self, portrayal_method, grid_height, grid_width,
                  canvas_height=500, canvas_width=500):
