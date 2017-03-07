@@ -3,9 +3,46 @@
 Release History
 ---------------
 
-Next release
+
+Next release - XXXXXX
 ++++++++++++++++++
-* ... 
+
+*
+
+
+0.8.0 (2017-01-29) - Edgar
+++++++++++++++++++
+
+**Improvements**
+
+* Updating contribution file to prevent future travis breaks #336
+* Updating Travis svg to target #master, not branches. #343
+* implement "end" message in visualization #346
+* Move empty-cell functions to baseclass Grid #349
+
+**Fixes**
+
+* Only start tornado ioloop if necessary #339
+* fix boundaries of ContinousSpace #345
+
+
+0.7.8.1 (2016-11-02) Duncan
+++++++++++++++++++
+
+**Improvements**
+
+* Fixes #324 -- renames all examples to be the pythonic format of naming #328
+* Changing to port 8521, fixes #320. #321
+* Opens a browser window when launching the server #323
+* Ticket #314 - added progress bar to BatchRunner #316
+* Auto update year for copyright. #329
+
+**Fixes**
+
+* Minor bug fixes - Update ForestFire example notebook to new API, and rename Basic to Shape Example. #318
+* On-demand model stepping rather than an endless buffer #310
+* Updating contribution to prevent future travis breaks #330
+
 
 
 0.7.7 (2016-08-18)
@@ -113,7 +150,7 @@ Theme: Scipy Sprints 2016 ( ‘-’)人(ﾟ_ﾟ )
 ++++++++++++++++++
 
 **Improvements**
-   
+
 * Allow cell_list_content methods in Grids to accept single tuples in addition to lists
 
 
